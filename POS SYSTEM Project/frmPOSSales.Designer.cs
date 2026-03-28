@@ -39,6 +39,8 @@
             this.lblRole = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
+            this.numQuantity = new System.Windows.Forms.NumericUpDown();
             this.btnAddItem = new Guna.UI.WinForms.GunaButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -76,10 +78,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.errorSearchProduct = new System.Windows.Forms.ErrorProvider(this.components);
-            this.numQuantity = new System.Windows.Forms.NumericUpDown();
-            this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
@@ -88,7 +89,6 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorSearchProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -210,6 +210,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(390, 682);
             this.panel2.TabIndex = 1;
+            // 
+            // gunaLabel13
+            // 
+            this.gunaLabel13.AutoSize = true;
+            this.gunaLabel13.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.gunaLabel13.ForeColor = System.Drawing.Color.DimGray;
+            this.gunaLabel13.Location = new System.Drawing.Point(18, 163);
+            this.gunaLabel13.Name = "gunaLabel13";
+            this.gunaLabel13.Size = new System.Drawing.Size(85, 23);
+            this.gunaLabel13.TabIndex = 33;
+            this.gunaLabel13.Text = "Quantity :";
+            // 
+            // numQuantity
+            // 
+            this.numQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numQuantity.Location = new System.Drawing.Point(112, 164);
+            this.numQuantity.Name = "numQuantity";
+            this.numQuantity.Size = new System.Drawing.Size(87, 27);
+            this.numQuantity.TabIndex = 32;
             // 
             // btnAddItem
             // 
@@ -734,25 +753,6 @@
             // 
             this.errorSearchProduct.ContainerControl = this;
             // 
-            // numQuantity
-            // 
-            this.numQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numQuantity.Location = new System.Drawing.Point(112, 164);
-            this.numQuantity.Name = "numQuantity";
-            this.numQuantity.Size = new System.Drawing.Size(87, 27);
-            this.numQuantity.TabIndex = 32;
-            // 
-            // gunaLabel13
-            // 
-            this.gunaLabel13.AutoSize = true;
-            this.gunaLabel13.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.gunaLabel13.ForeColor = System.Drawing.Color.DimGray;
-            this.gunaLabel13.Location = new System.Drawing.Point(18, 163);
-            this.gunaLabel13.Name = "gunaLabel13";
-            this.gunaLabel13.Size = new System.Drawing.Size(85, 23);
-            this.gunaLabel13.TabIndex = 33;
-            this.gunaLabel13.Text = "Quantity :";
-            // 
             // frmPOSSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -772,6 +772,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -783,7 +784,6 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorSearchProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).EndInit();
             this.ResumeLayout(false);
 
         }

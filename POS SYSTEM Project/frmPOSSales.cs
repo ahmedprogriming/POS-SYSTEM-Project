@@ -73,16 +73,17 @@ namespace POS_SYSTEM_Project
         {
             if (string.IsNullOrEmpty(txtBarcode.Text.Trim()))
             {
-               // e.Cancel = true;
+                //e.Cancel = true;
                 errorSearchProduct.SetError(txtBarcode, "This filed is rquired!");
                 return;
             }
             else
             {
-               // e.Cancel = false;
+                //e.Cancel = false ;
                 errorSearchProduct.SetError(txtBarcode, null);
             }
         }
+
 
         private void btnCleaar_Click(object sender, EventArgs e)
         {
@@ -156,12 +157,14 @@ namespace POS_SYSTEM_Project
             if (dgvCart.CurrentRow != null && dgvCart.CurrentRow.IsNewRow)
             {
 
-                dgvCart.Rows.RemoveAt(dgvCart.CurrentRow.Index);
+                dgvCart.Rows.Clear();
             }
             else
             {
                 MessageBox.Show("Select row the correct first!");
             }
         }
+
+      
     }
 }
