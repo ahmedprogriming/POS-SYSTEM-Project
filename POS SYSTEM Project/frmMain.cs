@@ -74,5 +74,22 @@ namespace POS_SYSTEM_Project
         {
             TimerDateToDay.Start();
         }
+
+        private void OpenFormInPanal(Form frm)
+        {
+            PanMain.Controls.Clear();
+
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+
+            PanMain.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void brnSales_Click(object sender, EventArgs e)
+        {
+            OpenFormInPanal(new frmPOSSales());
+        }
     }
 }
