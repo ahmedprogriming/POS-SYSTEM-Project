@@ -585,6 +585,8 @@
             this.panSaidMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.PanMain.ResumeLayout(false);
+          
             this.ResumeLayout(false);
             this.PerformLayout();
 
