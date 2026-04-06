@@ -1,4 +1,5 @@
 ﻿using Busisns_Layer;
+using clrResultSales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace POS_SYSTEM_Project
     public partial class frmMain : Form
     {
         private clsUsers _User = new clsUsers();
+        
         public frmMain()
         {
             InitializeComponent();
@@ -24,6 +26,8 @@ namespace POS_SYSTEM_Project
             panSaidMenu.Visible=!panSaidMenu.Visible;   
         }
 
+
+       
 
         private void frmMain_Activated(object sender, EventArgs e)
         {
@@ -62,7 +66,7 @@ namespace POS_SYSTEM_Project
             ibiRoleName2.Text= RoleUser;
 
         }
-
+        
         private void TimerDateToDay_Tick(object sender, EventArgs e)
         {
             lblDateToday.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -73,12 +77,13 @@ namespace POS_SYSTEM_Project
         private void frmMain_Load(object sender, EventArgs e)
         {
             TimerDateToDay.Start();
+            OpenFormInPanal(new frmDefuilt());
         }
 
         private void OpenFormInPanal(Form frm)
         {
             PanMain.Controls.Clear();
-
+       
             frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
@@ -89,7 +94,16 @@ namespace POS_SYSTEM_Project
 
         private void brnSales_Click(object sender, EventArgs e)
         {
-            OpenFormInPanal(new frmPOSSales());
+            OpenFormInPanal(new frmPOSSales(this));
         }
+
+        public void DefultShaw()
+        {
+            OpenFormInPanal(new frmDefuilt());
+        }
+
+     
+
+    
     }
 }

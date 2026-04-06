@@ -55,17 +55,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsGlobal.cs" />
+    <Compile Include="class Global\clsGlobal.cs" />
+    <Compile Include="Pos Sale\frmDefuilt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pos Sale\frmDefuilt.Designer.cs">
+      <DependentUpon>frmDefuilt.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPOSSales.cs">
+    <Compile Include="Pos Sale\frmPOSSales.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPOSSales.Designer.cs">
+    <Compile Include="Pos Sale\frmPOSSales.Designer.cs">
       <DependentUpon>frmPOSSales.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\frmLogin.cs">
@@ -76,10 +82,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pos Sale\frmDefuilt.resx">
+      <DependentUpon>frmDefuilt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPOSSales.resx">
+    <EmbeddedResource Include="Pos Sale\frmPOSSales.resx">
       <DependentUpon>frmPOSSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\frmLogin.resx">
@@ -149,6 +158,10 @@
     <ProjectReference Include="..\Busisns_Layer\Busisns_Layer.csproj">
       <Project>{7ae6ca09-0b8b-46be-8b07-63615f88a621}</Project>
       <Name>Busisns_Layer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clrResultSales\ucResultSales.csproj">
+      <Project>{d12bda2a-3818-4a45-95ae-db81dad2ad74}</Project>
+      <Name>ucResultSales</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using Busisns_Layer;
+using Microsoft.VisualBasic.ApplicationServices;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Windows.Forms;
 
 namespace POS_SYSTEM_Project
 {
-    public class clsGlobal
+    public static class clsGlobal
     {
         public static clsUsers Currentuser {  get; set; }
 
@@ -61,6 +62,32 @@ namespace POS_SYSTEM_Project
                 MessageBox.Show($"An error occurred: {ex.Message}");
                 return false;
             }
+        }
+
+        public static string ReturnNaameRole()
+        {
+            string RoleUser = "";
+          clsUsers  _User = clsGlobal.Currentuser;
+
+            switch (_User.RoleID)
+            {
+                case 1:
+                    _User.NuRole = clsUsers.enRole.Admin;
+                    break;
+                case 2:
+                    _User.NuRole = clsUsers.enRole.Manager;
+                    break;
+                case 3:
+                    _User.NuRole = clsUsers.enRole.Cashier;
+                    break;
+                default:
+                    return "Unknown";
+                    
+            }
+
+            RoleUser = _User.NameRole;
+
+            return RoleUser;
         }
     }
 }

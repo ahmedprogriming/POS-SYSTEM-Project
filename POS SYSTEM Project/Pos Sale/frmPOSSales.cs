@@ -16,9 +16,16 @@ namespace POS_SYSTEM_Project
     {
        private string Barcode="";
         private int Qyt = -1;
-        public frmPOSSales()
+        decimal SubTotal = 0m;
+        decimal DisCount = 0m;
+        decimal Tax = 0m;
+        decimal FinalTotal = 0m;
+
+        frmMain _frmMainAgain;
+        public frmPOSSales(frmMain frmMainAgain)
         {
             InitializeComponent();
+            _frmMainAgain = frmMainAgain;
         }
 
         private void frmPOSSales_Load(object sender, EventArgs e)
@@ -95,11 +102,7 @@ namespace POS_SYSTEM_Project
 
          private void CalculateInvoice()
         {
-            decimal SubTotal = 0m;
-            decimal DisCount = 0m;
-            decimal Tax = 0m;
-            decimal FinalTotal = 0m;
-
+            
             foreach(DataGridViewRow row in dgvCart.Rows)
             {
                 if (row.IsNewRow)
@@ -137,6 +140,7 @@ namespace POS_SYSTEM_Project
 
             dgvCart.Rows.Add
                 (
+                addProduct.ProductID,
                 addProduct.ProductName,
                 Qyt,
                 addProduct.SellingPrice,
@@ -154,10 +158,10 @@ namespace POS_SYSTEM_Project
 
         private void btnRemoveItem_Click(object sender, EventArgs e)
         {
-            if (dgvCart.CurrentRow != null && dgvCart.CurrentRow.IsNewRow)
+            if (dgvCart.CurrentRow != null && !dgvCart.CurrentRow.IsNewRow)
             {
 
-                dgvCart.Rows.Clear();
+                dgvCart.Rows.RemoveAt( dgvCart.CurrentRow.Index);
             }
             else
             {
@@ -165,6 +169,65 @@ namespace POS_SYSTEM_Project
             }
         }
 
-      
+        private void btnClearCart_Click(object sender, EventArgs e)
+        {
+            dgvCart.Rows.Clear();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            _frmMainAgain.DefultShaw();
+        }
+
+        private void btnConfirmSale_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("You sure of this operation sale ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                List<clsSaleItems> listItems = new List<clsSaleItems>();
+                clsSales sales = new clsSales();
+
+                foreach (DataGridViewRow row in dgvCart.Rows)
+                {
+                    if (row.IsNewRow)
+                        continue;
+
+                    listItems.Add(new clsSaleItems
+                    {
+                        ProductID = Convert.ToInt32(row.Cells["ProductID"].Value),
+                        Quantity = Convert.ToInt32(row.Cells["Qty"].Value),
+                        UnitPrice = Convert.ToDecimal(row.Cells["Price"].Value)
+
+                    });
+                }
+
+                sales.Total = FinalTotal;
+                sales.SubTotal = SubTotal;
+                sales.Discount = DisCount;
+                sales.Tax = Tax;
+                sales.PaymentStatus = "Paid";
+                sales.InvoiceNumber = "INV-" + DateTime.Now.ToString("yyyyMMddHHmmss");
+                sales.payMethod = comPayment.Text;
+                sales.SaleDate = DateTime.Now;
+                sales.UserID = clsGlobal.Currentuser.UserID;
+                sales.Items= listItems;
+
+                if (sales.Save())
+                {
+                    MessageBox.Show("Successfully Opration!", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dgvCart.Rows.Clear();
+                    frmPOSSales_Load(null, null);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Not Successfully Opration!", "Not Save", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            return;
+        }
     }
 }

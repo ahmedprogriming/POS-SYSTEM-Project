@@ -31,7 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.panLeft = new System.Windows.Forms.Panel();
+            this.btnDashMenu = new Guna.UI.WinForms.GunaTileButton();
             this.panSaidMenu = new System.Windows.Forms.Panel();
+            this.btnReport = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnUsers = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnLogout = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnProducts = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnCategories = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnSuppliers = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnInventory = new Guna.UI.WinForms.GunaGradientButton();
+            this.brnSales = new Guna.UI.WinForms.GunaGradientButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTime = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
@@ -44,48 +53,14 @@
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.lblNameWelcome = new Guna.UI.WinForms.GunaLabel();
             this.PanMain = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblTopProduct = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel15 = new Guna.UI.WinForms.GunaLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblLowStock = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblInvoicesCount = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
-            this.panSalesToday = new System.Windows.Forms.Panel();
-            this.lblTodaySales = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
             this.TimerDateToDay = new System.Windows.Forms.Timer(this.components);
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.ibiRoleName2 = new Guna.UI.WinForms.GunaLabel();
             this.lblTopTime = new Guna.UI.WinForms.GunaLabel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnDashMenu = new Guna.UI.WinForms.GunaTileButton();
-            this.btnReport = new Guna.UI.WinForms.GunaGradientButton();
-            this.btnUsers = new Guna.UI.WinForms.GunaGradientButton();
-            this.btnLogout = new Guna.UI.WinForms.GunaGradientButton();
-            this.btnProducts = new Guna.UI.WinForms.GunaGradientButton();
-            this.btnCategories = new Guna.UI.WinForms.GunaGradientButton();
-            this.btnSuppliers = new Guna.UI.WinForms.GunaGradientButton();
-            this.btnInventory = new Guna.UI.WinForms.GunaGradientButton();
-            this.brnSales = new Guna.UI.WinForms.GunaGradientButton();
             this.panLeft.SuspendLayout();
             this.panSaidMenu.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.PanMain.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panSalesToday.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLabel1
@@ -110,430 +85,6 @@
             this.panLeft.Name = "panLeft";
             this.panLeft.Size = new System.Drawing.Size(336, 848);
             this.panLeft.TabIndex = 2;
-            // 
-            // panSaidMenu
-            // 
-            this.panSaidMenu.Controls.Add(this.btnReport);
-            this.panSaidMenu.Controls.Add(this.btnUsers);
-            this.panSaidMenu.Controls.Add(this.btnLogout);
-            this.panSaidMenu.Controls.Add(this.btnProducts);
-            this.panSaidMenu.Controls.Add(this.btnCategories);
-            this.panSaidMenu.Controls.Add(this.btnSuppliers);
-            this.panSaidMenu.Controls.Add(this.btnInventory);
-            this.panSaidMenu.Controls.Add(this.brnSales);
-            this.panSaidMenu.Location = new System.Drawing.Point(3, 200);
-            this.panSaidMenu.Name = "panSaidMenu";
-            this.panSaidMenu.Size = new System.Drawing.Size(331, 633);
-            this.panSaidMenu.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.lblTime);
-            this.panel2.Controls.Add(this.gunaLabel6);
-            this.panel2.Controls.Add(this.gunaLabel5);
-            this.panel2.Controls.Add(this.lblDateToday);
-            this.panel2.Controls.Add(this.lblNamerole);
-            this.panel2.Controls.Add(this.gunaLabel3);
-            this.panel2.Controls.Add(this.lblNameuser);
-            this.panel2.Controls.Add(this.gunaLabel2);
-            this.panel2.Location = new System.Drawing.Point(340, 807);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1013, 39);
-            this.panel2.TabIndex = 5;
-            // 
-            // lblTime
-            // 
-            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTime.AutoSize = true;
-            this.lblTime.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblTime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.Color.Black;
-            this.lblTime.Location = new System.Drawing.Point(682, 4);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(61, 28);
-            this.lblTime.TabIndex = 11;
-            this.lblTime.Text = "00:00";
-            // 
-            // gunaLabel6
-            // 
-            this.gunaLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaLabel6.AutoSize = true;
-            this.gunaLabel6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel6.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel6.Location = new System.Drawing.Point(614, -1);
-            this.gunaLabel6.Name = "gunaLabel6";
-            this.gunaLabel6.Size = new System.Drawing.Size(98, 38);
-            this.gunaLabel6.TabIndex = 10;
-            this.gunaLabel6.Text = "Time :";
-            // 
-            // gunaLabel5
-            // 
-            this.gunaLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaLabel5.AutoSize = true;
-            this.gunaLabel5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel5.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel5.Location = new System.Drawing.Point(793, 4);
-            this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(95, 38);
-            this.gunaLabel5.TabIndex = 7;
-            this.gunaLabel5.Text = "Date :";
-            // 
-            // lblDateToday
-            // 
-            this.lblDateToday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDateToday.AutoSize = true;
-            this.lblDateToday.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblDateToday.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateToday.ForeColor = System.Drawing.Color.Black;
-            this.lblDateToday.Location = new System.Drawing.Point(866, 11);
-            this.lblDateToday.Name = "lblDateToday";
-            this.lblDateToday.Size = new System.Drawing.Size(102, 28);
-            this.lblDateToday.TabIndex = 9;
-            this.lblDateToday.Text = "12/2/2026";
-            // 
-            // lblNamerole
-            // 
-            this.lblNamerole.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblNamerole.AutoSize = true;
-            this.lblNamerole.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblNamerole.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNamerole.ForeColor = System.Drawing.Color.Black;
-            this.lblNamerole.Location = new System.Drawing.Point(433, 3);
-            this.lblNamerole.Name = "lblNamerole";
-            this.lblNamerole.Size = new System.Drawing.Size(92, 28);
-            this.lblNamerole.TabIndex = 8;
-            this.lblNamerole.Text = "manager";
-            // 
-            // gunaLabel3
-            // 
-            this.gunaLabel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.gunaLabel3.AutoSize = true;
-            this.gunaLabel3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel3.Location = new System.Drawing.Point(351, -1);
-            this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(98, 38);
-            this.gunaLabel3.TabIndex = 7;
-            this.gunaLabel3.Text = "Role : ";
-            // 
-            // lblNameuser
-            // 
-            this.lblNameuser.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblNameuser.AutoSize = true;
-            this.lblNameuser.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblNameuser.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameuser.ForeColor = System.Drawing.Color.Black;
-            this.lblNameuser.Location = new System.Drawing.Point(84, 6);
-            this.lblNameuser.Name = "lblNameuser";
-            this.lblNameuser.Size = new System.Drawing.Size(78, 28);
-            this.lblNameuser.TabIndex = 7;
-            this.lblNameuser.Text = "Ahmed";
-            // 
-            // gunaLabel2
-            // 
-            this.gunaLabel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel2.Location = new System.Drawing.Point(6, -1);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(91, 38);
-            this.gunaLabel2.TabIndex = 6;
-            this.gunaLabel2.Text = "User :";
-            // 
-            // gunaLabel4
-            // 
-            this.gunaLabel4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gunaLabel4.AutoSize = true;
-            this.gunaLabel4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel4.Location = new System.Drawing.Point(1087, 9);
-            this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(144, 28);
-            this.gunaLabel4.TabIndex = 8;
-            this.gunaLabel4.Text = "Welcom back,";
-            // 
-            // lblNameWelcome
-            // 
-            this.lblNameWelcome.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblNameWelcome.AutoSize = true;
-            this.lblNameWelcome.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblNameWelcome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameWelcome.ForeColor = System.Drawing.Color.Black;
-            this.lblNameWelcome.Location = new System.Drawing.Point(1206, 9);
-            this.lblNameWelcome.Name = "lblNameWelcome";
-            this.lblNameWelcome.Size = new System.Drawing.Size(79, 28);
-            this.lblNameWelcome.TabIndex = 9;
-            this.lblNameWelcome.Text = "Ahmed";
-            // 
-            // PanMain
-            // 
-            this.PanMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.PanMain.Controls.Add(this.panel4);
-            this.PanMain.Controls.Add(this.panel3);
-            this.PanMain.Controls.Add(this.panel1);
-            this.PanMain.Controls.Add(this.panSalesToday);
-            this.PanMain.Location = new System.Drawing.Point(340, 71);
-            this.PanMain.Name = "PanMain";
-            this.PanMain.Size = new System.Drawing.Size(1011, 737);
-            this.PanMain.TabIndex = 10;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(182)))), ((int)(((byte)(250)))));
-            this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Controls.Add(this.lblTopProduct);
-            this.panel4.Controls.Add(this.gunaLabel15);
-            this.panel4.Location = new System.Drawing.Point(350, 216);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(10);
-            this.panel4.Size = new System.Drawing.Size(228, 109);
-            this.panel4.TabIndex = 3;
-            // 
-            // lblTopProduct
-            // 
-            this.lblTopProduct.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblTopProduct.AutoSize = true;
-            this.lblTopProduct.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblTopProduct.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTopProduct.ForeColor = System.Drawing.Color.Black;
-            this.lblTopProduct.Location = new System.Drawing.Point(30, 59);
-            this.lblTopProduct.Name = "lblTopProduct";
-            this.lblTopProduct.Size = new System.Drawing.Size(105, 28);
-            this.lblTopProduct.TabIndex = 10;
-            this.lblTopProduct.Text = "Coca cola";
-            // 
-            // gunaLabel15
-            // 
-            this.gunaLabel15.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gunaLabel15.AutoSize = true;
-            this.gunaLabel15.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gunaLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.gunaLabel15.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel15.Location = new System.Drawing.Point(21, 16);
-            this.gunaLabel15.Name = "gunaLabel15";
-            this.gunaLabel15.Size = new System.Drawing.Size(129, 25);
-            this.gunaLabel15.TabIndex = 9;
-            this.gunaLabel15.Text = " Top Product ";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Controls.Add(this.lblLowStock);
-            this.panel3.Controls.Add(this.gunaLabel13);
-            this.panel3.Location = new System.Drawing.Point(55, 216);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(228, 109);
-            this.panel3.TabIndex = 2;
-            // 
-            // lblLowStock
-            // 
-            this.lblLowStock.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblLowStock.AutoSize = true;
-            this.lblLowStock.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblLowStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLowStock.ForeColor = System.Drawing.Color.Black;
-            this.lblLowStock.Location = new System.Drawing.Point(30, 59);
-            this.lblLowStock.Name = "lblLowStock";
-            this.lblLowStock.Size = new System.Drawing.Size(82, 25);
-            this.lblLowStock.TabIndex = 10;
-            this.lblLowStock.Text = "4 Items";
-            // 
-            // gunaLabel13
-            // 
-            this.gunaLabel13.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gunaLabel13.AutoSize = true;
-            this.gunaLabel13.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gunaLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.gunaLabel13.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel13.Location = new System.Drawing.Point(21, 16);
-            this.gunaLabel13.Name = "gunaLabel13";
-            this.gunaLabel13.Size = new System.Drawing.Size(108, 25);
-            this.gunaLabel13.TabIndex = 9;
-            this.gunaLabel13.Text = "Low Stock ";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.lblInvoicesCount);
-            this.panel1.Controls.Add(this.gunaLabel11);
-            this.panel1.Location = new System.Drawing.Point(350, 51);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(228, 109);
-            this.panel1.TabIndex = 1;
-            // 
-            // lblInvoicesCount
-            // 
-            this.lblInvoicesCount.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblInvoicesCount.AutoSize = true;
-            this.lblInvoicesCount.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblInvoicesCount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInvoicesCount.ForeColor = System.Drawing.Color.Black;
-            this.lblInvoicesCount.Location = new System.Drawing.Point(30, 59);
-            this.lblInvoicesCount.Name = "lblInvoicesCount";
-            this.lblInvoicesCount.Size = new System.Drawing.Size(31, 28);
-            this.lblInvoicesCount.TabIndex = 10;
-            this.lblInvoicesCount.Text = "18";
-            // 
-            // gunaLabel11
-            // 
-            this.gunaLabel11.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gunaLabel11.AutoSize = true;
-            this.gunaLabel11.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gunaLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.gunaLabel11.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel11.Location = new System.Drawing.Point(21, 16);
-            this.gunaLabel11.Name = "gunaLabel11";
-            this.gunaLabel11.Size = new System.Drawing.Size(142, 25);
-            this.gunaLabel11.TabIndex = 9;
-            this.gunaLabel11.Text = "Invoices Count";
-            // 
-            // panSalesToday
-            // 
-            this.panSalesToday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panSalesToday.Controls.Add(this.pictureBox1);
-            this.panSalesToday.Controls.Add(this.lblTodaySales);
-            this.panSalesToday.Controls.Add(this.gunaLabel9);
-            this.panSalesToday.Location = new System.Drawing.Point(55, 51);
-            this.panSalesToday.Name = "panSalesToday";
-            this.panSalesToday.Padding = new System.Windows.Forms.Padding(10);
-            this.panSalesToday.Size = new System.Drawing.Size(228, 109);
-            this.panSalesToday.TabIndex = 0;
-            // 
-            // lblTodaySales
-            // 
-            this.lblTodaySales.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblTodaySales.AutoSize = true;
-            this.lblTodaySales.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblTodaySales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTodaySales.ForeColor = System.Drawing.Color.Black;
-            this.lblTodaySales.Location = new System.Drawing.Point(30, 59);
-            this.lblTodaySales.Name = "lblTodaySales";
-            this.lblTodaySales.Size = new System.Drawing.Size(72, 25);
-            this.lblTodaySales.TabIndex = 10;
-            this.lblTodaySales.Text = "$1250";
-            // 
-            // gunaLabel9
-            // 
-            this.gunaLabel9.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gunaLabel9.AutoSize = true;
-            this.gunaLabel9.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gunaLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel9.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel9.Location = new System.Drawing.Point(21, 16);
-            this.gunaLabel9.Name = "gunaLabel9";
-            this.gunaLabel9.Size = new System.Drawing.Size(137, 25);
-            this.gunaLabel9.TabIndex = 9;
-            this.gunaLabel9.Text = "Today\'s Sales";
-            // 
-            // TimerDateToDay
-            // 
-            this.TimerDateToDay.Interval = 1000;
-            this.TimerDateToDay.Tick += new System.EventHandler(this.TimerDateToDay_Tick);
-            // 
-            // gunaLabel7
-            // 
-            this.gunaLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaLabel7.AutoSize = true;
-            this.gunaLabel7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel7.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel7.Location = new System.Drawing.Point(701, 9);
-            this.gunaLabel7.Name = "gunaLabel7";
-            this.gunaLabel7.Size = new System.Drawing.Size(352, 59);
-            this.gunaLabel7.TabIndex = 11;
-            this.gunaLabel7.Text = "Dashboard Menu";
-            // 
-            // gunaLabel8
-            // 
-            this.gunaLabel8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gunaLabel8.AutoSize = true;
-            this.gunaLabel8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel8.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel8.Location = new System.Drawing.Point(1073, 40);
-            this.gunaLabel8.Name = "gunaLabel8";
-            this.gunaLabel8.Size = new System.Drawing.Size(59, 28);
-            this.gunaLabel8.TabIndex = 12;
-            this.gunaLabel8.Text = "Role:";
-            // 
-            // ibiRoleName2
-            // 
-            this.ibiRoleName2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.ibiRoleName2.AutoSize = true;
-            this.ibiRoleName2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ibiRoleName2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibiRoleName2.ForeColor = System.Drawing.Color.Black;
-            this.ibiRoleName2.Location = new System.Drawing.Point(1117, 40);
-            this.ibiRoleName2.Name = "ibiRoleName2";
-            this.ibiRoleName2.Size = new System.Drawing.Size(74, 28);
-            this.ibiRoleName2.TabIndex = 13;
-            this.ibiRoleName2.Text = "Admin";
-            // 
-            // lblTopTime
-            // 
-            this.lblTopTime.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblTopTime.AutoSize = true;
-            this.lblTopTime.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblTopTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTopTime.ForeColor = System.Drawing.Color.Black;
-            this.lblTopTime.Location = new System.Drawing.Point(1226, 40);
-            this.lblTopTime.Name = "lblTopTime";
-            this.lblTopTime.Size = new System.Drawing.Size(104, 28);
-            this.lblTopTime.TabIndex = 14;
-            this.lblTopTime.Text = "06:22 AM";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::POS_SYSTEM_Project.Properties.Resources.star_blaze;
-            this.pictureBox3.Location = new System.Drawing.Point(151, 38);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(64, 49);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::POS_SYSTEM_Project.Properties.Resources.risk1;
-            this.pictureBox4.Location = new System.Drawing.Point(148, 38);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(64, 49);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 7;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::POS_SYSTEM_Project.Properties.Resources.invoice;
-            this.pictureBox2.Location = new System.Drawing.Point(149, 44);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 49);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::POS_SYSTEM_Project.Properties.Resources.bag_money_handbag_sack;
-            this.pictureBox1.Location = new System.Drawing.Point(148, 44);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // btnDashMenu
             // 
@@ -560,6 +111,21 @@
             this.btnDashMenu.TabIndex = 4;
             this.btnDashMenu.Text = "Dashboard Menu";
             this.btnDashMenu.Click += new System.EventHandler(this.btnDashMenu_Click);
+            // 
+            // panSaidMenu
+            // 
+            this.panSaidMenu.Controls.Add(this.btnReport);
+            this.panSaidMenu.Controls.Add(this.btnUsers);
+            this.panSaidMenu.Controls.Add(this.btnLogout);
+            this.panSaidMenu.Controls.Add(this.btnProducts);
+            this.panSaidMenu.Controls.Add(this.btnCategories);
+            this.panSaidMenu.Controls.Add(this.btnSuppliers);
+            this.panSaidMenu.Controls.Add(this.btnInventory);
+            this.panSaidMenu.Controls.Add(this.brnSales);
+            this.panSaidMenu.Location = new System.Drawing.Point(3, 200);
+            this.panSaidMenu.Name = "panSaidMenu";
+            this.panSaidMenu.Size = new System.Drawing.Size(331, 633);
+            this.panSaidMenu.TabIndex = 4;
             // 
             // btnReport
             // 
@@ -778,6 +344,219 @@
             this.brnSales.Text = "Salse";
             this.brnSales.Click += new System.EventHandler(this.brnSales_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblTime);
+            this.panel2.Controls.Add(this.gunaLabel6);
+            this.panel2.Controls.Add(this.gunaLabel5);
+            this.panel2.Controls.Add(this.lblDateToday);
+            this.panel2.Controls.Add(this.lblNamerole);
+            this.panel2.Controls.Add(this.gunaLabel3);
+            this.panel2.Controls.Add(this.lblNameuser);
+            this.panel2.Controls.Add(this.gunaLabel2);
+            this.panel2.Location = new System.Drawing.Point(340, 807);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1013, 39);
+            this.panel2.TabIndex = 5;
+            // 
+            // lblTime
+            // 
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTime.AutoSize = true;
+            this.lblTime.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.Black;
+            this.lblTime.Location = new System.Drawing.Point(682, 4);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(61, 28);
+            this.lblTime.TabIndex = 11;
+            this.lblTime.Text = "00:00";
+            // 
+            // gunaLabel6
+            // 
+            this.gunaLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLabel6.AutoSize = true;
+            this.gunaLabel6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel6.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel6.Location = new System.Drawing.Point(614, -1);
+            this.gunaLabel6.Name = "gunaLabel6";
+            this.gunaLabel6.Size = new System.Drawing.Size(98, 38);
+            this.gunaLabel6.TabIndex = 10;
+            this.gunaLabel6.Text = "Time :";
+            // 
+            // gunaLabel5
+            // 
+            this.gunaLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLabel5.AutoSize = true;
+            this.gunaLabel5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel5.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel5.Location = new System.Drawing.Point(793, 4);
+            this.gunaLabel5.Name = "gunaLabel5";
+            this.gunaLabel5.Size = new System.Drawing.Size(95, 38);
+            this.gunaLabel5.TabIndex = 7;
+            this.gunaLabel5.Text = "Date :";
+            // 
+            // lblDateToday
+            // 
+            this.lblDateToday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDateToday.AutoSize = true;
+            this.lblDateToday.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblDateToday.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateToday.ForeColor = System.Drawing.Color.Black;
+            this.lblDateToday.Location = new System.Drawing.Point(866, 11);
+            this.lblDateToday.Name = "lblDateToday";
+            this.lblDateToday.Size = new System.Drawing.Size(102, 28);
+            this.lblDateToday.TabIndex = 9;
+            this.lblDateToday.Text = "12/2/2026";
+            // 
+            // lblNamerole
+            // 
+            this.lblNamerole.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNamerole.AutoSize = true;
+            this.lblNamerole.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblNamerole.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNamerole.ForeColor = System.Drawing.Color.Black;
+            this.lblNamerole.Location = new System.Drawing.Point(433, 3);
+            this.lblNamerole.Name = "lblNamerole";
+            this.lblNamerole.Size = new System.Drawing.Size(92, 28);
+            this.lblNamerole.TabIndex = 8;
+            this.lblNamerole.Text = "manager";
+            // 
+            // gunaLabel3
+            // 
+            this.gunaLabel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.gunaLabel3.AutoSize = true;
+            this.gunaLabel3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel3.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel3.Location = new System.Drawing.Point(351, -1);
+            this.gunaLabel3.Name = "gunaLabel3";
+            this.gunaLabel3.Size = new System.Drawing.Size(98, 38);
+            this.gunaLabel3.TabIndex = 7;
+            this.gunaLabel3.Text = "Role : ";
+            // 
+            // lblNameuser
+            // 
+            this.lblNameuser.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNameuser.AutoSize = true;
+            this.lblNameuser.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblNameuser.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameuser.ForeColor = System.Drawing.Color.Black;
+            this.lblNameuser.Location = new System.Drawing.Point(84, 6);
+            this.lblNameuser.Name = "lblNameuser";
+            this.lblNameuser.Size = new System.Drawing.Size(78, 28);
+            this.lblNameuser.TabIndex = 7;
+            this.lblNameuser.Text = "Ahmed";
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel2.Location = new System.Drawing.Point(6, -1);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(91, 38);
+            this.gunaLabel2.TabIndex = 6;
+            this.gunaLabel2.Text = "User :";
+            // 
+            // gunaLabel4
+            // 
+            this.gunaLabel4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.gunaLabel4.AutoSize = true;
+            this.gunaLabel4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel4.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel4.Location = new System.Drawing.Point(1087, 9);
+            this.gunaLabel4.Name = "gunaLabel4";
+            this.gunaLabel4.Size = new System.Drawing.Size(144, 28);
+            this.gunaLabel4.TabIndex = 8;
+            this.gunaLabel4.Text = "Welcom back,";
+            // 
+            // lblNameWelcome
+            // 
+            this.lblNameWelcome.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblNameWelcome.AutoSize = true;
+            this.lblNameWelcome.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblNameWelcome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameWelcome.ForeColor = System.Drawing.Color.Black;
+            this.lblNameWelcome.Location = new System.Drawing.Point(1206, 9);
+            this.lblNameWelcome.Name = "lblNameWelcome";
+            this.lblNameWelcome.Size = new System.Drawing.Size(79, 28);
+            this.lblNameWelcome.TabIndex = 9;
+            this.lblNameWelcome.Text = "Ahmed";
+            // 
+            // PanMain
+            // 
+            this.PanMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.PanMain.Location = new System.Drawing.Point(340, 71);
+            this.PanMain.Name = "PanMain";
+            this.PanMain.Size = new System.Drawing.Size(1011, 737);
+            this.PanMain.TabIndex = 10;
+            // 
+            // TimerDateToDay
+            // 
+            this.TimerDateToDay.Interval = 1000;
+            this.TimerDateToDay.Tick += new System.EventHandler(this.TimerDateToDay_Tick);
+            // 
+            // gunaLabel7
+            // 
+            this.gunaLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLabel7.AutoSize = true;
+            this.gunaLabel7.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel7.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel7.Location = new System.Drawing.Point(701, 9);
+            this.gunaLabel7.Name = "gunaLabel7";
+            this.gunaLabel7.Size = new System.Drawing.Size(352, 59);
+            this.gunaLabel7.TabIndex = 11;
+            this.gunaLabel7.Text = "Dashboard Menu";
+            // 
+            // gunaLabel8
+            // 
+            this.gunaLabel8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.gunaLabel8.AutoSize = true;
+            this.gunaLabel8.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel8.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel8.Location = new System.Drawing.Point(1073, 40);
+            this.gunaLabel8.Name = "gunaLabel8";
+            this.gunaLabel8.Size = new System.Drawing.Size(59, 28);
+            this.gunaLabel8.TabIndex = 12;
+            this.gunaLabel8.Text = "Role:";
+            // 
+            // ibiRoleName2
+            // 
+            this.ibiRoleName2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ibiRoleName2.AutoSize = true;
+            this.ibiRoleName2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ibiRoleName2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibiRoleName2.ForeColor = System.Drawing.Color.Black;
+            this.ibiRoleName2.Location = new System.Drawing.Point(1117, 40);
+            this.ibiRoleName2.Name = "ibiRoleName2";
+            this.ibiRoleName2.Size = new System.Drawing.Size(74, 28);
+            this.ibiRoleName2.TabIndex = 13;
+            this.ibiRoleName2.Text = "Admin";
+            // 
+            // lblTopTime
+            // 
+            this.lblTopTime.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblTopTime.AutoSize = true;
+            this.lblTopTime.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblTopTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopTime.ForeColor = System.Drawing.Color.Black;
+            this.lblTopTime.Location = new System.Drawing.Point(1226, 40);
+            this.lblTopTime.Name = "lblTopTime";
+            this.lblTopTime.Size = new System.Drawing.Size(104, 28);
+            this.lblTopTime.TabIndex = 14;
+            this.lblTopTime.Text = "06:22 AM";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -806,19 +585,6 @@
             this.panSaidMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.PanMain.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panSalesToday.ResumeLayout(false);
-            this.panSalesToday.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -854,21 +620,5 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
         private Guna.UI.WinForms.GunaLabel ibiRoleName2;
         private Guna.UI.WinForms.GunaLabel lblTopTime;
-        private System.Windows.Forms.Panel panSalesToday;
-        private Guna.UI.WinForms.GunaLabel gunaLabel9;
-        private System.Windows.Forms.Panel panel4;
-        private Guna.UI.WinForms.GunaLabel lblTopProduct;
-        private Guna.UI.WinForms.GunaLabel gunaLabel15;
-        private System.Windows.Forms.Panel panel3;
-        private Guna.UI.WinForms.GunaLabel lblLowStock;
-        private Guna.UI.WinForms.GunaLabel gunaLabel13;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaLabel lblInvoicesCount;
-        private Guna.UI.WinForms.GunaLabel gunaLabel11;
-        private Guna.UI.WinForms.GunaLabel lblTodaySales;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

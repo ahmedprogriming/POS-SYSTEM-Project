@@ -31,12 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPOSSales));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
-            this.lblDateToday = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.lblTopTime = new Guna.UI.WinForms.GunaLabel();
-            this.ibiUser = new Guna.UI.WinForms.GunaLabel();
-            this.lblRole = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
@@ -70,10 +64,11 @@
             this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
             this.lbl = new Guna.UI.WinForms.GunaLabel();
             this.dgvCart = new System.Windows.Forms.DataGridView();
+            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
@@ -94,12 +89,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.gunaLabel7);
-            this.panel1.Controls.Add(this.lblDateToday);
-            this.panel1.Controls.Add(this.gunaLabel2);
-            this.panel1.Controls.Add(this.lblTopTime);
-            this.panel1.Controls.Add(this.ibiUser);
-            this.panel1.Controls.Add(this.lblRole);
             this.panel1.Controls.Add(this.gunaLabel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -108,86 +97,15 @@
             this.panel1.Size = new System.Drawing.Size(1200, 80);
             this.panel1.TabIndex = 0;
             // 
-            // gunaLabel7
-            // 
-            this.gunaLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaLabel7.AutoSize = true;
-            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.gunaLabel7.ForeColor = System.Drawing.Color.DimGray;
-            this.gunaLabel7.Location = new System.Drawing.Point(978, 28);
-            this.gunaLabel7.Name = "gunaLabel7";
-            this.gunaLabel7.Size = new System.Drawing.Size(56, 23);
-            this.gunaLabel7.TabIndex = 20;
-            this.gunaLabel7.Text = "Time :";
-            // 
-            // lblDateToday
-            // 
-            this.lblDateToday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDateToday.AutoSize = true;
-            this.lblDateToday.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.lblDateToday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.lblDateToday.Location = new System.Drawing.Point(820, 28);
-            this.lblDateToday.Name = "lblDateToday";
-            this.lblDateToday.Size = new System.Drawing.Size(106, 23);
-            this.lblDateToday.TabIndex = 19;
-            this.lblDateToday.Text = "12/02/2026";
-            // 
-            // gunaLabel2
-            // 
-            this.gunaLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.gunaLabel2.ForeColor = System.Drawing.Color.DimGray;
-            this.gunaLabel2.Location = new System.Drawing.Point(759, 28);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(55, 23);
-            this.gunaLabel2.TabIndex = 18;
-            this.gunaLabel2.Text = "Date :";
-            // 
-            // lblTopTime
-            // 
-            this.lblTopTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTopTime.AutoSize = true;
-            this.lblTopTime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.lblTopTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.lblTopTime.Location = new System.Drawing.Point(1038, 28);
-            this.lblTopTime.Name = "lblTopTime";
-            this.lblTopTime.Size = new System.Drawing.Size(88, 23);
-            this.lblTopTime.TabIndex = 17;
-            this.lblTopTime.Text = "06:22 AM";
-            // 
-            // ibiUser
-            // 
-            this.ibiUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ibiUser.AutoSize = true;
-            this.ibiUser.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.ibiUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.ibiUser.Location = new System.Drawing.Point(635, 28);
-            this.ibiUser.Name = "ibiUser";
-            this.ibiUser.Size = new System.Drawing.Size(68, 23);
-            this.ibiUser.TabIndex = 16;
-            this.ibiUser.Text = "Ahmed";
-            // 
-            // lblRole
-            // 
-            this.lblRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRole.AutoSize = true;
-            this.lblRole.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.lblRole.ForeColor = System.Drawing.Color.DimGray;
-            this.lblRole.Location = new System.Drawing.Point(559, 28);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(69, 23);
-            this.lblRole.TabIndex = 15;
-            this.lblRole.Text = "Admin :";
-            // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.gunaLabel1.Location = new System.Drawing.Point(12, 19);
+            this.gunaLabel1.Location = new System.Drawing.Point(509, 9);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(155, 41);
+            this.gunaLabel1.Size = new System.Drawing.Size(241, 62);
             this.gunaLabel1.TabIndex = 3;
             this.gunaLabel1.Text = "POS Sales";
             // 
@@ -498,6 +416,7 @@
             this.btnClearCart.Size = new System.Drawing.Size(140, 40);
             this.btnClearCart.TabIndex = 31;
             this.btnClearCart.Text = "Clear Cart";
+            this.btnClearCart.Click += new System.EventHandler(this.btnClearCart_Click);
             // 
             // btnConfirmSale
             // 
@@ -523,6 +442,7 @@
             this.btnConfirmSale.Size = new System.Drawing.Size(185, 40);
             this.btnConfirmSale.TabIndex = 30;
             this.btnConfirmSale.Text = "Confirm Sale";
+            this.btnConfirmSale.Click += new System.EventHandler(this.btnConfirmSale_Click);
             // 
             // btnCancel
             // 
@@ -548,6 +468,7 @@
             this.btnCancel.Size = new System.Drawing.Size(120, 40);
             this.btnCancel.TabIndex = 29;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // comPayment
             // 
@@ -678,10 +599,11 @@
             this.dgvCart.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductID,
             this.Product,
-            this.ColQty,
-            this.ColPrice,
-            this.ColTotal});
+            this.Qty,
+            this.Price,
+            this.Total});
             this.dgvCart.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvCart.Location = new System.Drawing.Point(14, 76);
             this.dgvCart.Name = "dgvCart";
@@ -690,6 +612,14 @@
             this.dgvCart.Size = new System.Drawing.Size(742, 328);
             this.dgvCart.TabIndex = 5;
             // 
+            // ProductID
+            // 
+            this.ProductID.HeaderText = "ID";
+            this.ProductID.MinimumWidth = 6;
+            this.ProductID.Name = "ProductID";
+            this.ProductID.Visible = false;
+            this.ProductID.Width = 125;
+            // 
             // Product
             // 
             this.Product.HeaderText = "Product";
@@ -697,26 +627,26 @@
             this.Product.Name = "Product";
             this.Product.Width = 200;
             // 
-            // ColQty
+            // Qty
             // 
-            this.ColQty.HeaderText = "Qty";
-            this.ColQty.MinimumWidth = 6;
-            this.ColQty.Name = "ColQty";
-            this.ColQty.Width = 125;
+            this.Qty.HeaderText = "Qty";
+            this.Qty.MinimumWidth = 6;
+            this.Qty.Name = "Qty";
+            this.Qty.Width = 125;
             // 
-            // ColPrice
+            // Price
             // 
-            this.ColPrice.HeaderText = "Price";
-            this.ColPrice.MinimumWidth = 6;
-            this.ColPrice.Name = "ColPrice";
-            this.ColPrice.Width = 125;
+            this.Price.HeaderText = "Price";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.Width = 125;
             // 
-            // ColTotal
+            // Total
             // 
-            this.ColTotal.HeaderText = "Total";
-            this.ColTotal.MinimumWidth = 6;
-            this.ColTotal.Name = "ColTotal";
-            this.ColTotal.Width = 125;
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 6;
+            this.Total.Name = "Total";
+            this.Total.Width = 125;
             // 
             // panel3
             // 
@@ -792,11 +722,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private Guna.UI.WinForms.GunaLabel lblTopTime;
-        private Guna.UI.WinForms.GunaLabel ibiUser;
-        private Guna.UI.WinForms.GunaLabel lblRole;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
-        private Guna.UI.WinForms.GunaLabel lblDateToday;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
@@ -806,7 +731,6 @@
         private Guna.UI.WinForms.GunaTextBox txtBarcode;
         private Guna.UI.WinForms.GunaButton btnCleaar;
         private System.Windows.Forms.DataGridView dgvProductList;
-        private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
@@ -830,13 +754,14 @@
         private Guna.UI.WinForms.GunaButton btnConfirmSale;
         private Guna.UI.WinForms.GunaButton btnCancel;
         private System.Windows.Forms.ComboBox comPayment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColQty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColTotal;
         private Guna.UI.WinForms.GunaButton btnAddItem;
         private System.Windows.Forms.ErrorProvider errorSearchProduct;
         private System.Windows.Forms.NumericUpDown numQuantity;
         private Guna.UI.WinForms.GunaLabel gunaLabel13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }

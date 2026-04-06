@@ -84,6 +84,57 @@ namespace DataAcsses_Layer
             return IsFond;
         }
 
+        public static bool GetProductByID( int productID,ref string Barcode , ref string productName, ref int categoryID,
+          ref int supplierID, ref float costprice, ref float sellingprice, ref int quantityinstock, ref int minimumstocklevel, ref bool isactive)
+        {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
+            bool IsFond = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = @"Select * From Products Where productID=@productID";
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+                        command.Parameters.AddWithValue("@productID", productID);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                IsFond = true;
+
+                                Barcode = (string)reader["Barcode"];
+                                productName = (string)reader["productName"];
+                                categoryID = (int)reader["categoryID"];
+                                supplierID = (int)reader["supplierID"];
+                                costprice = Convert.ToSingle(reader["costprice"]);
+                                sellingprice = Convert.ToSingle(reader["sellingprice"]);
+                                quantityinstock = (int)reader["quantityinstock"];
+                                minimumstocklevel = (int)reader["minimumstocklevel"];
+                                isactive = (bool)reader["IsActive"];
+
+                            }
+
+                        }
+
+                    }
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLog.EventLogExsiption(ex);
+
+            }
+            return IsFond;
+
+        }
+
         public static bool GetProductByBarcode(string Barcode,ref int productID,ref string productName,ref int categoryID,
           ref  int supplierID,ref float costprice,ref float sellingprice,ref int quantityinstock,ref int minimumstocklevel,ref bool isactive)
         {
@@ -133,6 +184,90 @@ namespace DataAcsses_Layer
 
             }
             return IsFond;
+        }
+
+        public static int TopProduct()
+        {
+            int ProductID = -1;
+
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
+   
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = @"Select Top 1 SaleItems.ProductID From SaleItems
+                              Inner Join Sales 
+                                    On Sales.SaleID = SaleItems.SaleID
+                              Where SaleDate >= CAST(GETDATE() As DATE)
+                                                 And SaleDate < DATEADD(DAY, 1, CAST(GETDATE() AS DATE))
+                                       Group by ProductID
+                                        Order By SUM(LineTotal) DESC;";
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                      
+                        object reasult= command.ExecuteScalar();
+
+                        if (reasult != null && int.TryParse(reasult.ToString(),out int autoID)) 
+                        {
+                        
+                            ProductID = autoID;
+                        }
+
+                    }
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLog.EventLogExsiption(ex);
+
+            }
+            return ProductID;
+
+        }
+
+        public static int ProductLowStock()
+        {
+            int ProductID = -1;
+
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
+
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = @"Select ProductID From Products
+                                           Where QuantityInStock=MinimumStockLevel;";
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+                        object reasult = command.ExecuteScalar();
+
+                        if (reasult != null && int.TryParse(reasult.ToString(), out int autoID))
+                        {
+
+                            ProductID = autoID;
+                        }
+
+                    }
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLog.EventLogExsiption(ex);
+
+            }
+            return ProductID;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,6 +62,25 @@ namespace Busisns_Layer
             return clsProductData.IsProductExsites( productName, barcode);
         }
 
+        public static clsProduct GetProductByID(int productID)
+        {
+            int categoryID = -1, quantityinstock = -1, minimumstocklevel = -1, supplierID = -1;
+            string productName = "" , barcode="";
+            float costprice = 0, sellingprice = 0;
+            bool isactive = false;
+
+            if (clsProductData.GetProductByID( productID,ref barcode, ref productName, ref categoryID, ref supplierID,
+                ref costprice, ref sellingprice, ref quantityinstock, ref minimumstocklevel, ref isactive))
+            {
+                return new clsProduct(productID, productName, barcode, categoryID, supplierID,
+                 costprice, sellingprice, quantityinstock, minimumstocklevel, isactive);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static clsProduct GetProductByBarcode(string barcode)
         {
             int productID = -1 , categoryID=-1 , quantityinstock=-1 , minimumstocklevel=-1 , supplierID=-1;
@@ -78,6 +98,31 @@ namespace Busisns_Layer
             {
                 return null;
             }
+        }
+
+        public static int TopProductSalesToday()
+        {
+            int ProductID = clsProductData.TopProduct();
+
+            if (ProductID !=-1)
+            {
+                return ProductID;
+            }
+
+           return -1;
+        }
+
+        public static int ProductLowQuantity()
+        {
+            int ProductID = clsProductData.ProductLowStock();
+
+            if (ProductID != -1)
+            {
+                return ProductID;
+            }
+
+            return -1;
+           
         }
     }
 }
