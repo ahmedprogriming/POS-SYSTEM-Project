@@ -234,6 +234,7 @@
             this.btnProducts.Size = new System.Drawing.Size(296, 59);
             this.btnProducts.TabIndex = 8;
             this.btnProducts.Text = "Products";
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // btnCategories
             // 
@@ -585,8 +586,6 @@
             this.panSaidMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.PanMain.ResumeLayout(false);
-          
             this.ResumeLayout(false);
             this.PerformLayout();
 

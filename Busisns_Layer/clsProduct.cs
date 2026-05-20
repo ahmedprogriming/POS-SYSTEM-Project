@@ -11,6 +11,9 @@ namespace Busisns_Layer
 {
     public class clsProduct
     {
+        public enum enMode {AddNew=1 , Update=2 };
+
+        public enMode Mode = enMode.AddNew;
         public int ProductID { get; set; }
         public string ProductName { get; set; }
         public string Barcode { get; set; }
@@ -22,6 +25,8 @@ namespace Busisns_Layer
         public int QuantityInStock { get; set; }
         public int MinimumStockLevel { get; set; }
         public bool IsActive { get; set; }
+
+        public clsCategory CategoryType { get; set; }
 
         public clsProduct ()
         {
@@ -35,6 +40,8 @@ namespace Busisns_Layer
             this.QuantityInStock = -1;
             this.MinimumStockLevel = -1;
             this.IsActive = false;
+
+            Mode = enMode.AddNew;
         }
 
         public clsProduct(int productID,string productName,string barcode,int categoryID,
@@ -50,8 +57,15 @@ namespace Busisns_Layer
             this.QuantityInStock= quantityinstock;
             this.MinimumStockLevel = minimumstocklevel;
             this.IsActive = isactive;
+            this.CategoryType=clsCategory.GetAllCategoriesByID(categoryID);
+
+            Mode = enMode.Update;
         }
 
+        public static DataTable GetAllProduct()
+        {
+            return clsProductData.GetAllProducts();
+        }
         public static DataTable GetPartProduct()
         {
             return clsProductData.GetPartProducts();
@@ -123,6 +137,47 @@ namespace Busisns_Layer
 
             return -1;
            
+        }
+
+        private bool _AddnewProduct()
+        {
+            this.ProductID = clsProductData.AddNewProduct(this.Barcode, this.ProductName, this.CategoryID, this.SupplierID,
+                this.CostPrice, this.SellingPrice, this.QuantityInStock, this.MinimumStockLevel, this.IsActive);      
+            
+            return (this.ProductID !=-1);
+        }
+
+        private bool _UpdateProduct()
+        {
+            return clsProductData.UpdateProduct(this.ProductID, this.Barcode, this.ProductName, this.CategoryID, this.SupplierID, this.CostPrice,
+                this.SellingPrice, this.QuantityInStock, this.MinimumStockLevel, this.IsActive);
+        }
+
+        public static bool DeleteProduct(int ProductID)
+        {
+            return clsProductData.DeleteProduct(ProductID);
+        }
+
+        public bool Save()
+        {
+            switch(Mode)
+            {
+                case enMode.AddNew:
+                    if(_AddnewProduct())
+                    {
+                        Mode = enMode.Update;
+                        return true;
+
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case enMode.Update:
+
+                    return _UpdateProduct();
+            }
+            return false;
         }
     }
 }

@@ -31,28 +31,8 @@ namespace POS_SYSTEM_Project
 
         private void frmMain_Activated(object sender, EventArgs e)
         {
-            string RoleUser = "";
-            _User = clsGlobal.Currentuser;
-
-            switch (_User.RoleID)
-            {
-                case 1:
-                    _User.NuRole = clsUsers.enRole.Admin;
-                    break;
-                case 2:
-                    _User.NuRole = clsUsers.enRole.Manager;
-                    break;
-                case 3:
-                    _User.NuRole = clsUsers.enRole.Cashier;
-                    break;
-                default:
-                    lblNamerole.Text = "Unknown";
-                    break;
-            }
-
-            RoleUser = _User.NameRole;
-
-            lblNamerole.Text = RoleUser;
+         
+            lblNamerole.Text = clsGlobal.ReturnNameRole();
 
             btnUsers.Enabled = (lblNamerole.Text == "Admin");
             btnCategories.Enabled = (lblNamerole.Text == "Admin" || lblNamerole.Text == "Manager");
@@ -63,7 +43,7 @@ namespace POS_SYSTEM_Project
 
             lblNameuser.Text = clsGlobal.Currentuser.FullName;
             lblNameWelcome.Text = clsGlobal.Currentuser.FullName;
-            ibiRoleName2.Text= RoleUser;
+            ibiRoleName2.Text= clsGlobal.ReturnNameRole();
 
         }
         
@@ -102,8 +82,9 @@ namespace POS_SYSTEM_Project
             OpenFormInPanal(new frmDefuilt());
         }
 
-     
-
-    
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            OpenFormInPanal(new frmProductList(this));
+        }
     }
 }

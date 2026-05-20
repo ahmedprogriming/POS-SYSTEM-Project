@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsCategoryData.cs" />
     <Compile Include="clsEventLog.cs" />
     <Compile Include="clsProductData.cs" />
     <Compile Include="clsSaleItemsData.cs" />

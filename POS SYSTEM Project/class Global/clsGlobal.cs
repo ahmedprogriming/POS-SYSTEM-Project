@@ -64,7 +64,7 @@ namespace POS_SYSTEM_Project
             }
         }
 
-        public static string ReturnNaameRole()
+        public static string ReturnNameRole()
         {
             string RoleUser = "";
           clsUsers  _User = clsGlobal.Currentuser;

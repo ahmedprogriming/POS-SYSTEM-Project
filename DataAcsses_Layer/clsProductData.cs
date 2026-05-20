@@ -12,6 +12,49 @@ namespace DataAcsses_Layer
 {
     public class clsProductData
     {
+        public static DataTable GetAllProducts()
+        {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
+            DataTable result = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+              string Query = @" Select Products.ProductID,Products.ProductName,Products.Barcode,Categories.CategoryName,Suppliers.SupplierName,
+              Products.CostPrice,Products.SellingPrice,Products.QuantityInStock,Products.MinimumStockLevel,Products.IsActive
+              From Products 
+              Inner Join Categories 
+                 ON(Products.CategoryID = Categories.CategoryID)
+              Inner Join Suppliers
+                 ON(Products.SupplierID = Suppliers.SupplierID)";
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                result.Load(reader);
+                            }
+
+                        }
+
+                    }
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLog.EventLogExsiption(ex);
+
+            }
+            return result;
+
+
+        }
         public static DataTable GetPartProducts()
         {
             string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
@@ -48,6 +91,107 @@ namespace DataAcsses_Layer
             return result;
 
 
+        }
+
+        public static int AddNewProduct(string Barcode,  string productName,  int categoryID,
+           int supplierID,  float costprice,  float sellingprice,  int quantityinstock,  int minimumstocklevel,  bool isactive)
+        {
+            int ProductID = -1;
+
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = @"EXEC SP_AddNewProduct
+    @ProductName =@ProductName
+  ,@Barcode=@Barcode
+  ,@CategoryID=@CategoryID
+  ,@SupplierID=@SupplierID
+  ,@CostPrice=@CostPrice
+  ,@SellingPrice=@SellingPrice
+  ,@QuantityInStock=@QuantityInStock
+  ,@MinimumStockLevel=@MinimumStockLevel
+  ,@IsActive=@IsActive";
+
+                    using(SqlCommand command = new SqlCommand(Query,connection))
+                    {
+                        command.Parameters.AddWithValue("@ProductName", productName);
+                        command.Parameters.AddWithValue("@Barcode", Barcode);
+                        command.Parameters.AddWithValue("@CategoryID", categoryID);
+                        command.Parameters.AddWithValue("@SupplierID", supplierID);
+                        command.Parameters.AddWithValue("@CostPrice", costprice);
+                        command.Parameters.AddWithValue("@SellingPrice", sellingprice);
+                        command.Parameters.AddWithValue("@QuantityInStock", quantityinstock);
+                        command.Parameters.AddWithValue("@MinimumStockLevel", minimumstocklevel);
+                        command.Parameters.AddWithValue("@IsActive", isactive);
+
+                        object reder = command.ExecuteScalar();
+
+                        if (reder != null && int.TryParse(reder.ToString(),out int autoID))
+                        {
+                            ProductID = autoID;
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLog.EventLogExsiption(ex);
+            }
+            return ProductID;
+        }
+
+        public static bool UpdateProduct(int productID, string Barcode, string productName, int categoryID,
+           int supplierID, float costprice, float sellingprice, int quantityinstock, int minimumstocklevel, bool isactive)
+        {
+            int rowAfeted = -1;
+
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = @" UPDATE [dbo].[Products]
+            SET [ProductName] = @ProductName,
+                [Barcode] = @Barcode,
+                [CategoryID] = @CategoryID,
+                [SupplierID] = @SupplierID,
+                [CostPrice] = @CostPrice,
+                [SellingPrice] = @SellingPrice,
+                [QuantityInStock] = @QuantityInStock,
+                [MinimumStockLevel] = @MinimumStockLevel,
+                [IsActive] = @IsActive
+            WHERE ProductID = @ProductID;";
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ProductID", productID);
+                        command.Parameters.AddWithValue("@ProductName", productName);
+                        command.Parameters.AddWithValue("@Barcode", Barcode);
+                        command.Parameters.AddWithValue("@CategoryID", categoryID);
+                        command.Parameters.AddWithValue("@SupplierID", supplierID);
+                        command.Parameters.AddWithValue("@CostPrice", costprice);
+                        command.Parameters.AddWithValue("@SellingPrice", sellingprice);
+                        command.Parameters.AddWithValue("@QuantityInStock", quantityinstock);
+                        command.Parameters.AddWithValue("@MinimumStockLevel", minimumstocklevel);
+                        command.Parameters.AddWithValue("@IsActive", isactive);
+
+                      rowAfeted =command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLog.EventLogExsiption(ex);
+            }
+            return (rowAfeted > 0);
         }
 
         public static bool IsProductExsites( string productName ,string barcode)
@@ -268,6 +412,41 @@ namespace DataAcsses_Layer
 
             }
             return ProductID;
+        }
+
+        public static bool DeleteProduct(int Id)
+
+        {
+            int rowafected = -1;
+
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
+
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = @"Delete Products where productID=@productID";
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+                        command.Parameters.AddWithValue("@productID", Id);
+
+                        rowafected=command.ExecuteNonQuery();
+
+                    }
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLog.EventLogExsiption(ex);
+
+            }
+            return (rowafected > 0);
         }
     }
 }
