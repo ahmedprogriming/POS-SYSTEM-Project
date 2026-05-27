@@ -86,5 +86,10 @@ namespace POS_SYSTEM_Project
         {
             OpenFormInPanal(new frmProductList(this));
         }
+
+        private void btnCategories_Click(object sender, EventArgs e)
+        {
+            OpenFormInPanal(new frmCategoryList(this));
+        }
     }
 }

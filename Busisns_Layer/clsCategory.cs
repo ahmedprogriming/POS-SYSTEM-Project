@@ -10,6 +10,9 @@ namespace Busisns_Layer
 {
     public class clsCategory
     {
+        public enum enMode { AddNew = 1, Update = 2 };
+
+        public enMode Mode = enMode.AddNew;
         public int CategoryID { get; set; }
 
         public string CategoryName { get; set; }
@@ -21,6 +24,8 @@ namespace Busisns_Layer
             CategoryID = categoryID;
             CategoryName = categoryName;
             Description = description;
+
+            Mode= enMode.Update;
         }
 
         public clsCategory() 
@@ -28,7 +33,7 @@ namespace Busisns_Layer
             this.CategoryID = -1;
             this.CategoryName = "";
             this.Description = "";
-        
+            Mode = enMode.AddNew;
         }
 
         public static DataTable GetAllCategries()
@@ -54,6 +59,43 @@ namespace Busisns_Layer
                 return new clsCategory(categoryID, NameCategory, Descrip);
             }
             return null;
+        }
+        private bool _AddnewCategories()
+        {
+            this.CategoryID = clsCategoryData.AddNewCategory(this.CategoryName, this.Description);
+
+            return (this.CategoryID != -1);
+        }
+
+        private bool _UpdateCategories()
+        {
+            return clsCategoryData.UpdateCategory(this.CategoryID, this.CategoryName, this.Description);
+        }
+
+        public static bool Deleted(int ID)
+        {
+            return clsCategoryData.DeleteCategory(ID);
+        }
+        public bool Save()
+        {
+            switch (Mode)
+            {
+                case enMode.AddNew:
+                    if (_AddnewCategories())
+                    {
+                        Mode = enMode.Update;
+                        return true;
+
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case enMode.Update:
+
+                    return _UpdateCategories();
+            }
+            return false;
         }
     }
 }

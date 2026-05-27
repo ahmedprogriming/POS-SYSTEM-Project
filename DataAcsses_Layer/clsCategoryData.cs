@@ -136,5 +136,118 @@ namespace DataAcsses_Layer
             return IsFond;
 
         }
+
+        public static int AddNewCategory(string CategoryName, string Description)
+        {
+            int CategoryID = -1;
+
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = @"INSERT INTO [dbo].[Categories]
+           ([CategoryName]
+           ,[Description])
+     VALUES
+           (@CategoryName
+           ,@Description)
+                    Select SCOPE_IDENTITY();  ";
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CategoryName", CategoryName);
+                        command.Parameters.AddWithValue("@Description", Description);
+                      
+
+                        object reder = command.ExecuteScalar();
+
+                        if (reder != null && int.TryParse(reder.ToString(), out int autoID))
+                        {
+                            CategoryID = autoID;
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLog.EventLogExsiption(ex);
+            }
+            return CategoryID;
+        }
+
+        public static bool UpdateCategory(int CategoryID, string CategoryName, string Description)
+        {
+            int rowAfeted = -1;
+
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = @" UPDATE [dbo].[Categories]
+            SET [CategoryName] = @CategoryName,
+                [Description] = @Description
+               
+            WHERE CategoryID = @CategoryID;";
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CategoryID", CategoryID);
+                        command.Parameters.AddWithValue("@CategoryName", CategoryName);
+                        command.Parameters.AddWithValue("@Description", Description);
+                      
+
+                        rowAfeted = command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLog.EventLogExsiption(ex);
+            }
+            return (rowAfeted > 0);
+        }
+
+        public static bool DeleteCategory(int Id)
+
+        {
+            int rowafected = -1;
+
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
+
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = @"Delete Categories where CategoryID=@CategoryID";
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+                        command.Parameters.AddWithValue("@CategoryID", Id);
+
+                        rowafected = command.ExecuteNonQuery();
+
+                    }
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLog.EventLogExsiption(ex);
+
+            }
+            return (rowafected > 0);
+        }
     }
 }

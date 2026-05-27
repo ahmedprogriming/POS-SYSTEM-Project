@@ -262,6 +262,7 @@
             this.btnCategories.Size = new System.Drawing.Size(296, 59);
             this.btnCategories.TabIndex = 7;
             this.btnCategories.Text = "Categories";
+            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
             // 
             // btnSuppliers
             // 
