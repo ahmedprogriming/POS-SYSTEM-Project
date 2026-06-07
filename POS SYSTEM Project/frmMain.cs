@@ -91,5 +91,10 @@ namespace POS_SYSTEM_Project
         {
             OpenFormInPanal(new frmCategoryList(this));
         }
+
+        private void btnSuppliers_Click(object sender, EventArgs e)
+        {
+            OpenFormInPanal(new SuppliersList(this));
+        }
     }
 }

@@ -47,6 +47,7 @@
     <Compile Include="clsProductData.cs" />
     <Compile Include="clsSaleItemsData.cs" />
     <Compile Include="clsSalesData.cs" />
+    <Compile Include="clsSuppliersData.cs" />
     <Compile Include="clsUsersData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

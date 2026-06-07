@@ -290,6 +290,7 @@
             this.btnSuppliers.Size = new System.Drawing.Size(296, 59);
             this.btnSuppliers.TabIndex = 6;
             this.btnSuppliers.Text = "Suppliers";
+            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
             // 
             // btnInventory
             // 

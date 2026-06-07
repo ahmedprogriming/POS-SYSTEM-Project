@@ -55,19 +55,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAddEditCategory.cs">
+    <Compile Include="category\frmAddEditCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddEditCategory.Designer.cs">
+    <Compile Include="category\AddEditCategory.Designer.cs">
       <DependentUpon>frmAddEditCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCategoryList.cs">
+    <Compile Include="category\frmCategoryList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CategoryList.Designer.cs">
+    <Compile Include="category\CategoryList.Designer.cs">
       <DependentUpon>frmCategoryList.cs</DependentUpon>
     </Compile>
     <Compile Include="class Global\clsGlobal.cs" />
+    <Compile Include="frmAddNewSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddNewSuppliers.Designer.cs">
+      <DependentUpon>frmAddNewSuppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="product\frmAddEditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,11 +130,14 @@
     <Compile Include="ucProductDetails.Designer.cs">
       <DependentUpon>ucProductDetails.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddEditCategory.resx">
+    <EmbeddedResource Include="category\AddEditCategory.resx">
       <DependentUpon>frmAddEditCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCategoryList.resx">
+    <EmbeddedResource Include="category\frmCategoryList.resx">
       <DependentUpon>frmCategoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddNewSuppliers.resx">
+      <DependentUpon>frmAddNewSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="product\frmAddEditProduct.resx">
       <DependentUpon>frmAddEditProduct.cs</DependentUpon>
@@ -319,6 +328,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\stock_market.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Email 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phone 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Address 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete 32 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddPerson 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add New User 72.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
