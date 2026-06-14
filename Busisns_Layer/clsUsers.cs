@@ -54,6 +54,26 @@ namespace Busisns_Layer
             CreatedAt = createdAt;
         }
 
+        public static clsUsers GetUserByID(int userID)
+        {
+            int  RoleID = -1;
+            string FullName = "", userName="", passward="";
+            bool IsActive = false;
+
+            DateTime CreatedAt = DateTime.MinValue;
+
+            //string HashPassward=ComputeHash(passward);
+
+            if (clsUsersData.GetUserByID( userID, ref RoleID,ref userName,ref passward, ref FullName, ref IsActive, CreatedAt))
+            {
+                return new clsUsers(userID, passward, userName, FullName, RoleID, IsActive, CreatedAt);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static clsUsers FindUserByUserNameAndPassord(string userName, string passward)
         {
             int UserID = -1,RoleID=-1;

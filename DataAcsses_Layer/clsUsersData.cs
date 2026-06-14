@@ -50,6 +50,60 @@ return result;
 
         }
 
+        public static bool GetUserByID( int UserID, ref int RoleID,ref string Username,ref string Password, ref string FullName
+           , ref bool IsActive, DateTime CreatedAt)
+        {
+            bool IsFond = false;
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = @"Select * from Users where UserID=@UserID;";
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserID", UserID);
+                     
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+
+                            if (reader.Read())
+                            {
+                                IsFond = true;
+
+                                Username = (string)reader["Username"];
+                                Password = (string)reader["Password"];
+                                RoleID = (int)reader["RoleID"];
+                                FullName = (string)reader["FullName"];
+                                IsActive = (bool)reader["IsActive"];
+                                CreatedAt = (DateTime)reader["CreatedAt"];
+
+
+                            }
+                            else
+                            {
+                                IsFond = false;
+                            }
+
+                        }
+
+                    }
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLog.EventLogExsiption(ex);
+            }
+            return IsFond;
+        }
+
         public static bool GetUserByUserNameAndPassword(ref int UserID, ref int RoleID, string Username,string Password,ref string FullName
             ,ref bool IsActive,DateTime CreatedAt)
         {

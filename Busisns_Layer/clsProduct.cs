@@ -25,7 +25,7 @@ namespace Busisns_Layer
         public int QuantityInStock { get; set; }
         public int MinimumStockLevel { get; set; }
         public bool IsActive { get; set; }
-
+       
         public clsCategory CategoryType { get; set; }
 
         public clsProduct ()

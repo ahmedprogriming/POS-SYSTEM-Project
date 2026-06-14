@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="clsCategoryData.cs" />
     <Compile Include="clsEventLog.cs" />
+    <Compile Include="clsInventoryTransactionData.cs" />
     <Compile Include="clsProductData.cs" />
     <Compile Include="clsSaleItemsData.cs" />
     <Compile Include="clsSalesData.cs" />

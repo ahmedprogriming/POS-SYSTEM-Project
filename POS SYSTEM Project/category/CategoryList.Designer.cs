@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panTop = new System.Windows.Forms.Panel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
@@ -171,14 +171,14 @@
             // 
             this.dgvCategoryList.BackgroundColor = System.Drawing.Color.White;
             this.dgvCategoryList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCategoryList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCategoryList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCategoryList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategoryList.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvCategoryList.Location = new System.Drawing.Point(13, 149);
@@ -223,7 +223,7 @@
             this.btnClose.FocusedColor = System.Drawing.Color.Empty;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Image = null;
+            this.btnClose.Image = global::POS_SYSTEM_Project.Properties.Resources.Close_64;
             this.btnClose.ImageSize = new System.Drawing.Size(18, 18);
             this.btnClose.Location = new System.Drawing.Point(641, 424);
             this.btnClose.Name = "btnClose";
@@ -282,7 +282,7 @@
             this.btnEdit.FocusedColor = System.Drawing.Color.Empty;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Image = null;
+            this.btnEdit.Image = global::POS_SYSTEM_Project.Properties.Resources.edit_32;
             this.btnEdit.ImageSize = new System.Drawing.Size(18, 18);
             this.btnEdit.Location = new System.Drawing.Point(382, 424);
             this.btnEdit.Name = "btnEdit";
@@ -308,7 +308,7 @@
             this.btnDelete.FocusedColor = System.Drawing.Color.Empty;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Image = null;
+            this.btnDelete.Image = global::POS_SYSTEM_Project.Properties.Resources.Delete_32;
             this.btnDelete.ImageSize = new System.Drawing.Size(18, 18);
             this.btnDelete.Location = new System.Drawing.Point(498, 424);
             this.btnDelete.Name = "btnDelete";

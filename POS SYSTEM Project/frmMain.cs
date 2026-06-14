@@ -96,5 +96,10 @@ namespace POS_SYSTEM_Project
         {
             OpenFormInPanal(new SuppliersList(this));
         }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            OpenFormInPanal(new frmInventory(this));
+        }
     }
 }
