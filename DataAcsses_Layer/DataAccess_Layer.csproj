@@ -46,6 +46,7 @@
     <Compile Include="clsEventLog.cs" />
     <Compile Include="clsInventoryTransactionData.cs" />
     <Compile Include="clsProductData.cs" />
+    <Compile Include="clsReportsData.cs" />
     <Compile Include="clsSaleItemsData.cs" />
     <Compile Include="clsSalesData.cs" />
     <Compile Include="clsSuppliersData.cs" />

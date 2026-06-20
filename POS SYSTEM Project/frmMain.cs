@@ -101,5 +101,10 @@ namespace POS_SYSTEM_Project
         {
             OpenFormInPanal(new frmInventory(this));
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            OpenFormInPanal(new frmReports(this));
+        }
     }
 }
