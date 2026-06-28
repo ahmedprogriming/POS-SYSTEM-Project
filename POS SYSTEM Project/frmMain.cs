@@ -106,5 +106,29 @@ namespace POS_SYSTEM_Project
         {
             OpenFormInPanal(new frmReports(this));
         }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            OpenFormInPanal(new frmManagerUsers(this));
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to logout?",
+       "Logout",
+       MessageBoxButtons.YesNo,
+       MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
+            clsGlobal.Currentuser = null;
+
+            frmLogin login = new frmLogin();
+
+            this.Hide();
+
+            login.ShowDialog();
+
+            this.Close();
+        }
     }
 }

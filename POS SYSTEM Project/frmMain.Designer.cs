@@ -181,6 +181,7 @@
             this.btnUsers.Size = new System.Drawing.Size(296, 59);
             this.btnUsers.TabIndex = 10;
             this.btnUsers.Text = "Users";
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // btnLogout
             // 
@@ -208,6 +209,7 @@
             this.btnLogout.Size = new System.Drawing.Size(296, 59);
             this.btnLogout.TabIndex = 9;
             this.btnLogout.Text = "Logout";
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnProducts
             // 

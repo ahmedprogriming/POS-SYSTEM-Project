@@ -24,7 +24,14 @@ namespace DataAcsses_Layer
                 {
                     connection.Open();
 
-                    string Query = "Select * from Users";
+                    string Query = @"Select Users.UserID,Users.FullName,Users.Username ,
+  Case Users.RoleID
+   WHEN 1 THEN 'Admin'
+        WHEN 2 THEN 'Manager'
+        WHEN 3 THEN 'Cashier'
+        ELSE 'Other'
+    END AS RoleName ,Users.IsActive, Users.CreatedAt
+FROM Users;";
                     using (SqlCommand command = new SqlCommand(Query, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -155,5 +162,141 @@ return result;
             }
             return IsFond;
         }
+
+        public static int AddNewUser( int RoleID, string Username,
+            string Password,  string FullName
+           , bool IsActive, DateTime CreatedAt)
+        {
+            int UserId = -1;
+
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = @"INSERT INTO [dbo].[Users]
+           ([FullName]
+           ,[Username]
+           ,[Password]
+           ,[RoleID]
+           ,[IsActive]
+           ,[CreatedAt])
+     VALUES
+           (@FullName
+           ,@Username
+           ,@Password
+           ,@RoleID
+           ,@IsActive
+           ,@CreatedAt
+                      )
+  Select SCOPE_IDENTITY();";
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue("@FullName", FullName);
+                        command.Parameters.AddWithValue("@Username", Username);
+                        command.Parameters.AddWithValue("@Password", Password);
+                        command.Parameters.AddWithValue("@RoleID", RoleID);
+                        command.Parameters.AddWithValue("@IsActive", IsActive);
+                        command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
+                      
+
+                        object reder = command.ExecuteScalar();
+
+                        if (reder != null && int.TryParse(reder.ToString(), out int autoID))
+                        {
+                            UserId = autoID;
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLog.EventLogExsiption(ex);
+            }
+            return UserId;
+        }
+
+        public static bool UpdateUser(int UserID,int RoleID, string Username,
+            string Password, string FullName
+           , bool IsActive, DateTime CreatedAt)
+        {
+            int rowAfeted = -1;
+
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = @" UPDATE [dbo].[Users]
+            SET [RoleID] = @RoleID,
+                [Username] = @Username,
+                [Password] = @Password,
+                [FullName] = @FullName,
+                [IsActive] = @IsActive,
+                [CreatedAt] = @CreatedAt
+              
+            WHERE UserID = @UserID;";
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserID", UserID);
+                        command.Parameters.AddWithValue("@FullName", FullName);
+                        command.Parameters.AddWithValue("@Username", Username);
+                        command.Parameters.AddWithValue("@Password", Password);
+                        command.Parameters.AddWithValue("@RoleID", RoleID);
+                        command.Parameters.AddWithValue("@IsActive", IsActive);
+                        command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
+
+                        rowAfeted = command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLog.EventLogExsiption(ex);
+            }
+            return (rowAfeted > 0);
+        }
+
+        public static bool DeletedUsers(int UserID)
+        {
+            int rowAfeted = -1;
+
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyDataBaseConnection"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = @" UPDATE [dbo].[Users]
+            SET 
+                [IsActive] = 0
+              
+            WHERE UserID = @UserID;";
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserID", UserID);
+                        
+                        rowAfeted = command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLog.EventLogExsiption(ex);
+            }
+            return (rowAfeted > 0);
+        }
+
     }
 }

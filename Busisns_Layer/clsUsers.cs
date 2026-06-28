@@ -12,6 +12,9 @@ namespace Busisns_Layer
 {
     public class clsUsers
     {
+        public enum enMode { AddNew = 1, Update = 2 };
+
+        public enMode Mode = enMode.AddNew;
         public enum enRole {Admin=1,Manager=2,Cashier=3};
 
         public enRole NuRole=enRole.Admin;
@@ -39,8 +42,10 @@ namespace Busisns_Layer
             Username = "";
             FullName = "";
             RoleID = -1;
-            IsActive = false;
+            IsActive = true;
             CreatedAt = DateTime.Now;
+
+            Mode = enMode.AddNew;
         }
 
         public clsUsers(int userID, string password, string username, string fullName, int roleID, bool isActive, DateTime createdAt)
@@ -52,6 +57,8 @@ namespace Busisns_Layer
             RoleID = roleID;
             IsActive = isActive;
             CreatedAt = createdAt;
+
+            Mode = enMode.Update;
         }
 
         public static clsUsers GetUserByID(int userID)
@@ -122,6 +129,68 @@ namespace Busisns_Layer
                 default:
                     return "Null";
             }
+        }
+
+        public static int GetIDRole(string role)
+        {
+            switch (role)
+            {
+                case "Admin":
+                    return 1;
+
+                case "manager":
+                    return 2;
+
+                case "cashier":
+                    return 3;
+                default:
+                    return -1;
+            }
+        }
+
+        public static DataTable GetAllUsers()
+        {
+            return clsUsersData.GetAllUsers();
+        }
+
+        private bool _AddnewUser()
+        {
+            this.UserID = clsUsersData.AddNewUser(this.RoleID,this.Username,
+                this.Password,this.FullName,this.IsActive,this.CreatedAt);
+
+            return (this.UserID != -1);
+        }
+
+        private bool _UpdateUser()
+        {
+            return clsUsersData.UpdateUser(this.UserID, this.RoleID, this.Username,
+                this.Password, this.FullName, this.IsActive, this.CreatedAt);
+        }
+
+        public static bool Deleted(int ID)
+        {
+            return clsUsersData.DeletedUsers(ID);
+        }
+        public bool Save()
+        {
+            switch (Mode)
+            {
+                case enMode.AddNew:
+                    if (_AddnewUser())
+                    {
+                        Mode = enMode.Update;
+                        return true;
+
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case enMode.Update:
+
+                    return _UpdateUser();
+            }
+            return false;
         }
     }
 }

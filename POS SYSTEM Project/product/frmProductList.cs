@@ -206,6 +206,9 @@ namespace POS_SYSTEM_Project
             _frmMain.DefultShaw();
         }
 
-       
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

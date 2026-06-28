@@ -112,10 +112,22 @@
       <DependentUpon>frmCategoryList.cs</DependentUpon>
     </Compile>
     <Compile Include="class Global\clsGlobal.cs" />
-    <Compile Include="frmReports.cs">
+    <Compile Include="frmEdit_AddUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReports.Designer.cs">
+    <Compile Include="frmEdit_AddUsers.Designer.cs">
+      <DependentUpon>frmEdit_AddUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManagerUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManagerUsers.Designer.cs">
+      <DependentUpon>frmManagerUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmReports.Designer.cs">
       <DependentUpon>frmReports.cs</DependentUpon>
     </Compile>
     <Compile Include="InventoryTransactions\frmHistory.cs">
@@ -198,7 +210,13 @@
     <EmbeddedResource Include="category\frmCategoryList.resx">
       <DependentUpon>frmCategoryList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReports.resx">
+    <EmbeddedResource Include="frmEdit_AddUsers.resx">
+      <DependentUpon>frmEdit_AddUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManagerUsers.resx">
+      <DependentUpon>frmManagerUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmReports.resx">
       <DependentUpon>frmReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryTransactions\frmHistory.resx">
@@ -439,6 +457,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\User 32 -2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross 32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
